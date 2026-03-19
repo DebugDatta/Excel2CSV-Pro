@@ -142,6 +142,25 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 st.markdown(
+    """
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap');
+        html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; letter-spacing: -0.5px; }
+        section.main > div { max-width: 780px; margin: auto; }
+        .stDownloadButton > button {
+            background: #0f4c75;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            padding: 0.45rem 1.1rem;
+        }
+        .stDownloadButton > button:hover { background: #1b6ca8; }
+        details summary { font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; }
+    </style>
+    """,
     unsafe_allow_html=True,
 )
 st.title("📊 Excel → CSV Converter")
