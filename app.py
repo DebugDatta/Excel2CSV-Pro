@@ -33,14 +33,15 @@ def cleanup_temp_dirs(paths: list[str]) -> None:
     for path in paths:
         shutil.rmtree(path, ignore_errors=True)
 def process_sheet(
-    xls: pd.ExcelFile,
+    excel_path: str,
     base_name: str,
     sheet_name: str,
     output_dir: str,
 ) -> tuple[Optional[pd.DataFrame], str]:
+    
     start = time.perf_counter()
     try:
-        df: pd.DataFrame = pd.read_excel(xls, sheet_name=sheet_name)
+        df: pd.DataFrame = pd.read_excel(excel_path, sheet_name=sheet_name)
         if df.empty:
             msg = f"SKIPPED  | {base_name} | {sheet_name} | empty sheet"
             logger.info(msg)
@@ -105,7 +106,7 @@ def convert_file(
     sheet_results: dict[str, Optional[pd.DataFrame]] = {s: None for s in sheets}
     with ThreadPoolExecutor() as executor:
         future_to_sheet: dict = {
-            executor.submit(process_sheet, xls, base_name, sheet, output_dir): sheet
+            executor.submit(process_sheet, excel_path, base_name, sheet, output_dir): sheet
             for sheet in sheets
         }
         for future in as_completed(future_to_sheet):
