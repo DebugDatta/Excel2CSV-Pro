@@ -9,7 +9,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Optional
 import pandas as pd
 import streamlit as st
-MAX_FILE_SIZE_MB: int = 50
+MAX_FILE_SIZE_MB: int = 200
 MAX_FILE_SIZE_BYTES: int = MAX_FILE_SIZE_MB * 1024 * 1024
 LOG_FILE: str = "conversion.log"
 logging.basicConfig(
