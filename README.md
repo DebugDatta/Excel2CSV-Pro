@@ -10,7 +10,7 @@ A high-performance multi-sheet Excel-to-CSV converter built with Streamlit. Uplo
 
 ## Live App
 
-[https://excel2csvpro.streamlit.app](https://excel2csvpro.streamlit.app)
+[https://excel2csv-pro.streamlit.app](https://excel2csv-pro.streamlit.app)
 
 ---
 
@@ -52,7 +52,7 @@ This tool enables fast and scalable conversion of Excel files (.xlsx, .xls) into
 ## Usage
 
 1. Open the app
-   [https://excel2csvpro.streamlit.app](https://excel2csvpro.streamlit.app)
+   [https://excel2csv-pro.streamlit.app](https://excel2csv-pro.streamlit.app)
 
 2. Upload one or more Excel files
 
